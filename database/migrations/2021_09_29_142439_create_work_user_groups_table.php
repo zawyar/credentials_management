@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Customer;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +17,9 @@ class CreateWorkUserGroupsTable extends Migration
     {
         Schema::create('work_user_groups', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+
+            $table->foreignIdFor(Customer::class);
             $table->timestamps();
         });
     }
