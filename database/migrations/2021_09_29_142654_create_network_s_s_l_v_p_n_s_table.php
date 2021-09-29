@@ -17,7 +17,9 @@ class CreateNetworkSSLVPNSTable extends Migration
     {
         Schema::create('network_s_s_l_v_p_n_s', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('username')->nullable();
+            $table->string('token')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

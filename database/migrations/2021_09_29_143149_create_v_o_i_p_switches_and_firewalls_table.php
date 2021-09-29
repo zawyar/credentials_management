@@ -1,7 +1,8 @@
 <?php
 
 use App\Models\Customer;
-
+use App\Models\NetworkIPAddress;
+use App\Models\NetworkSwitchesAndFirewalls;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,9 +18,9 @@ class CreateVOIPSwitchesAndFirewallsTable extends Migration
     {
         Schema::create('v_o_i_p_switches_and_firewalls', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->foreignIdFor(Network::class);
+            $table->foreignIdFor(NetworkSwitchesAndFirewalls::class);
             $table->foreignIdFor(Customer::class);
-
             $table->timestamps();
         });
     }

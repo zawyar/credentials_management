@@ -15,6 +15,16 @@ class CreateGeneralNotesTable extends Migration
     {
         Schema::create('general_notes', function (Blueprint $table) {
             $table->id();
+            $table->string('field_label')->nullable();
+            $table->string('field_value')->nullable();
+            $table->string('field_label2')->nullable();
+            $table->string('field_value2')->nullable();
+            $table->string('field_label3')->nullable();
+            $table->string('field_value3')->nullable();
+            $table->string('field_label4')->nullable();
+            $table->string('field_value4')->nullable();
+            $table->string('notes')->nullable();
+
             $table->timestamps();
         });
     }

@@ -17,7 +17,11 @@ class CreateVOIPSIPTrunksTable extends Migration
     {
         Schema::create('v_o_i_p_s_i_p_trunks', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->string('server')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

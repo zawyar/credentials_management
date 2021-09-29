@@ -17,7 +17,8 @@ class CreateVOIPMessagesTable extends Migration
     {
         Schema::create('v_o_i_p_messages', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('name')->nullable();
+            $table->string('file_path')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

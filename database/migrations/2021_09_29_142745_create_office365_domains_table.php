@@ -17,7 +17,10 @@ class CreateOffice365DomainsTable extends Migration
     {
         Schema::create('office365_domains', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('domain_name')->nullable();
+            $table->string('type')->nullable();
+            $table->string('url')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

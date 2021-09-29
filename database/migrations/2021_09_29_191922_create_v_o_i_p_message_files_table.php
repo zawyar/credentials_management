@@ -1,12 +1,12 @@
 <?php
 
 use App\Models\Customer;
-use App\Models\Signature;
+use App\Models\VOIPMessage;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSignatureFilesTable extends Migration
+class CreateVOIPMessageFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,10 @@ class CreateSignatureFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('signature_files', function (Blueprint $table) {
+        Schema::create('v_o_i_p_message_files', function (Blueprint $table) {
             $table->id();
             $table->string('file_path')->nullable();
-            $table->foreignIdFor(Signature::class);
+            $table->foreignIdFor(VOIPMessage::class);
             $table->foreignIdFor(Customer::class);
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateSignatureFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('signature_files');
+        Schema::dropIfExists('v_o_i_p_message_files');
     }
 }

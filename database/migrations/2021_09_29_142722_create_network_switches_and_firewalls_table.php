@@ -17,7 +17,11 @@ class CreateNetworkSwitchesAndFirewallsTable extends Migration
     {
         Schema::create('network_switches_and_firewalls', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('type')->nullable();
+            $table->string('admin')->nullable();
+            $table->string('username')->nullable();
+            $table->string('ip_address')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

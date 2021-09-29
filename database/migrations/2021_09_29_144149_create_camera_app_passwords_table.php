@@ -17,7 +17,9 @@ class CreateCameraAppPasswordsTable extends Migration
     {
         Schema::create('camera_app_passwords', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

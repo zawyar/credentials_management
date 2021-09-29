@@ -17,7 +17,9 @@ class CreateMailstoresTable extends Migration
     {
         Schema::create('mailstores', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('instance_name')->nullable();
+            $table->integer('license_count')->nullable();
+            $table->integer('license_type')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

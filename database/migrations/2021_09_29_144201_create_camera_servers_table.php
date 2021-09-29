@@ -17,7 +17,11 @@ class CreateCameraServersTable extends Migration
     {
         Schema::create('camera_servers', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('ip_address')->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->string('hardware_type')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

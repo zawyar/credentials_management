@@ -17,7 +17,11 @@ class CreateNetworkPrintersTable extends Migration
     {
         Schema::create('network_printers', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('name')->nullable();
+            $table->string('software_key')->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

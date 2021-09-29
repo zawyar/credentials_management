@@ -17,7 +17,9 @@ class CreateVOIPSTable extends Migration
     {
         Schema::create('v_o_i_p_s', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('ip_addresses')->nullable();
+            $table->string('3cx_url_intern')->nullable();
+            $table->string('3cx_url_extern')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();

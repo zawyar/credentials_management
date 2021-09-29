@@ -17,7 +17,10 @@ class CreateMailstoreUsersTable extends Migration
     {
         Schema::create('mailstore_users', function (Blueprint $table) {
             $table->id();
-            $table->string('notes')->unique()->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->boolean('admin')->default(false);
+            $table->string('notes')->nullable();
             $table->foreignIdFor(Customer::class);
 
             $table->timestamps();
