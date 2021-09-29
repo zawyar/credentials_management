@@ -18,7 +18,7 @@ class CreateVOIPSwitchesAndFirewallsTable extends Migration
     {
         Schema::create('v_o_i_p_switches_and_firewalls', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Network::class);
+            $table->foreignIdFor(NetworkIPAddress::class);
             $table->foreignIdFor(NetworkSwitchesAndFirewalls::class);
             $table->foreignIdFor(Customer::class);
             $table->timestamps();
